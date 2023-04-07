@@ -1,0 +1,18 @@
+<!-- templates/signup.html -->
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Sign Up</h1>
+  {% if error %}
+    <p>{{ error }}</p>
+  {% endif %}
+  <form action="{{ url_for('signup') }}" method="post">
+    <label for="email">Email:</label>
+    <input type="email" name="email" id="email" required>
+    <br>
+    <label for="password">Password:</label>
+    <input type="password" name="password" id="password" required>
+    <br>
+    <input type="submit" value="Sign Up">
+  </form>
+{% endblock %}
